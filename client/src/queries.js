@@ -3,6 +3,7 @@ import { gql } from 'apollo-boost';
 const getMerchandises = gql`
     {
         merchandises {
+            id
             name
             price
             provider{
@@ -13,5 +14,26 @@ const getMerchandises = gql`
 `
 
 
+const getMerchandise = gql`
+    query ($id: ID) {
+        merchandise(id: $id) {
+            id
+            name
+            price
+            provider {
+                name
+                phone
+            }
+        }
+    }
+`;
 
-export { getMerchandises };
+
+
+
+
+
+
+
+
+export { getMerchandises, getMerchandise };

@@ -5,13 +5,9 @@ import { getMerchandises } from '../queries';
 
 class MerchandiseList extends Component {
 
+
     displayMerchandise(){
         var data = this.props.data;
-
-        console.log(this.props)
-        console.log("2", data)
-
-
 
         if(data.loading){
             return( <div>Loading books...</div> );
@@ -19,7 +15,9 @@ class MerchandiseList extends Component {
             return data.merchandises.map(merchandise => {
                 return(
                     <li key={ merchandise.id } >
-                    <p>{ merchandise.name }</p>
+                    <p>{ merchandise.id }</p>
+                    <p><button onClick={e => (this.props.onPageChange("", merchandise.id))}>
+                    { merchandise.name }</button></p>
                     <p>{ merchandise.price }</p>
                     <p>{ merchandise.provider.name }</p>
                     </li>

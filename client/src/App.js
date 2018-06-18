@@ -5,7 +5,7 @@ import { ApolloProvider } from 'react-apollo';
 import './App.css';
 
 
-import MerchandiseList from './components/MerchandiseList';
+import Layer from './components/Layer';
 
 
 const client = new ApolloClient({
@@ -19,7 +19,7 @@ class App extends Component {
 
       <ApolloProvider client={client}>
       <div>
-        <MerchandiseList/>
+        <Layer/>
       </div>
       </ApolloProvider>
     
